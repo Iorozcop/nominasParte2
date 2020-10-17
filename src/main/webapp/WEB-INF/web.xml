@@ -1,0 +1,54 @@
+
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+ 
+  <servlet>
+  	<servlet-name>Servlets</servlet-name>
+  	<display-name>Servlets</display-name>
+  	<description></description>
+  	<servlet-class>servlets.Servlets</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>infoEmpleados</servlet-name>
+  	<display-name>infoEmple
+ </display-name>
+  	<description></description>
+  	<servlet-class>servlets.infoEmpleados</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>mostarDatos</servlet-name>
+  	<display-name>mostarDatos</display-name>
+  	<description></description>
+  	<servlet-class>servlets.mostarDatos</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>mostrarSalario</servlet-name>
+  	<display-name>mostrarSalario</display-name>
+  	<description></description>
+  	<servlet-class>servlets.mostrarSalario</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+  	<servlet-name>Servlets</servlet-name>
+  	<url-pattern>/Servlets</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>infoEmpleados</servlet-name>
+  	<url-pattern>/mostrarInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>mostarDatos</servlet-name>
+  	<url-pattern>/error.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>mostrarSalario</servlet-name>
+  	<url-pattern>/mostrarSalario.jsp</url-pattern>
+  </servlet-mapping>
+</web-app> 
