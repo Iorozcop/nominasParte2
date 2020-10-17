@@ -10,6 +10,14 @@
 </head>
 <body>
 <div class="container-fluid">
+
+<% String error = (String)request.getAttribute("error"); 
+	if(error.length() > 0){ %>
+	<p class="alert alert-danger" role="alert"><%= error %> </p>	
+		
+	<%}%>
+
+
 	<form action="/nominasParteII/mostrarSalario?action=Consultar" method="post">
 	   <div class="form-group">
 		<table class="table table-striped table-dark">

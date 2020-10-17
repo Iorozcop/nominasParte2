@@ -38,6 +38,7 @@ public class Servlets extends HttpServlet {
 			request.getRequestDispatcher("/infoEmpleados").forward(request, response);
 			break;
 		case "2":
+			request.setAttribute("error", "");
 			request.getRequestDispatcher("/vista/formularioDni.jsp").forward(request, response);
 			break;
 		case "3":

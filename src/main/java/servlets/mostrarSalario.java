@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +24,8 @@ public class mostrarSalario extends HttpServlet {
     public mostrarSalario() {
         super();
         // TODO Auto-generated constructor stub
+        
+        
     }
 
 	/**
@@ -39,8 +43,15 @@ public class mostrarSalario extends HttpServlet {
 		
 		implementacion imp = new implementacion();
 		Nomina nom = imp.mostrarSalario(request.getParameter("dni"));
+		String error= "";
 		
 		request.setAttribute("nomina", nom);
+		
+		if(nom == null) {
+			error = "No existe el dni";
+			request.setAttribute("error", error);
+			request.getRequestDispatcher("/vista/formularioDni.jsp").forward(request, response);
+		}
 		
 		request.getRequestDispatcher("/vista/mostrarSalario.jsp").forward(request, response);
 	}
