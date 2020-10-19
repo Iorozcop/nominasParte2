@@ -14,8 +14,7 @@
   </servlet>
   <servlet>
   	<servlet-name>infoEmpleados</servlet-name>
-  	<display-name>infoEmple
- </display-name>
+  	<display-name>infoEmpleados</display-name>
   	<description></description>
   	<servlet-class>servlets.infoEmpleados</servlet-class>
   </servlet>
@@ -30,6 +29,12 @@
   	<display-name>mostrarSalario</display-name>
   	<description></description>
   	<servlet-class>servlets.mostrarSalario</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControlBusquedaEmpleado</servlet-name>
+  	<display-name>ControlBusquedaEmpleado</display-name>
+  	<description></description>
+  	<servlet-class>servlets.ControlBusquedaEmpleado</servlet-class>
   </servlet>
  
   <servlet-mapping>
@@ -50,5 +55,9 @@
   <servlet-mapping>
   	<servlet-name>mostrarSalario</servlet-name>
   	<url-pattern>/mostrarSalario.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControlBusquedaEmpleado</servlet-name>
+  	<url-pattern>/busquedaEmpleado.jsp</url-pattern>
   </servlet-mapping>
 </web-app> 

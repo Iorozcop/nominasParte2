@@ -9,5 +9,6 @@ public interface dao {
 	
 	public ArrayList<Empleado> listaEmpleados();
 	public Nomina mostrarSalario(String dni);
+	public ArrayList<Empleado> busquedaPorDni(String dni);
 
 }

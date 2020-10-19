@@ -92,23 +92,30 @@ public class implementacion implements dao {
 			return nom;
 		}
 		
-		public void update(Empleado empleado) {
+		/** 
+		 * Método que muestra un listado de empleados
+		 * */
+		public ArrayList<Empleado> busquedaPorDni(String dni) {
+			
+			ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+			
 			try {
-
 				Connection conexion = conectar();
 				Statement consulta = conexion.createStatement();
+				ResultSet rs = consulta.executeQuery("SELECT * FROM empleados WHERE dni= '" + dni + "'");
 
-				consulta.executeUpdate("UPDATE empleados "
-						+ "SET categoria='" + empleado.getCategoria() + "',"
-						+ "anyosTrabajados='" + empleado.getAnyosTrabajados() + "'"
-						+ " WHERE dni='" + empleado.getDni() + "'");
+				while (rs.next()) {
+					
+					Empleado emp = new Empleado(rs.getString(1),rs.getString(2),rs.getString(3).charAt(0) ,rs.getInt(4), rs.getInt(5));
+					
+					empleados.add(emp);
 
+				}
+			
 				conexion.close();
 			} catch (Exception e) {
 				System.out.println(e);
-				System.out.println("Error al insertar");
-
 			}
+			return empleados;
 		}
-	
 }

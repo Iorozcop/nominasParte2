@@ -28,7 +28,7 @@ public class Servlets extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		// nos devuelve el action del form que tenemos en el .jsp
+		// nos devuelve el action del form que tenemos en el index.jsp
 		
 		String action= request.getParameter("action");
 		System.out.println(action);
@@ -38,11 +38,11 @@ public class Servlets extends HttpServlet {
 			request.getRequestDispatcher("/infoEmpleados").forward(request, response);
 			break;
 		case "2":
-			request.setAttribute("error", "");
+			request.setAttribute("error", ""); //esta página espera una variable error, de momento se la pasamos vacía
 			request.getRequestDispatcher("/vista/formularioDni.jsp").forward(request, response);
 			break;
 		case "3":
-			request.getRequestDispatcher("/mostrarDatos").forward(request, response);
+			request.getRequestDispatcher("/vista/busquedaEmpleado.jsp").forward(request, response);
 		    break;
 		default:
 			break;
